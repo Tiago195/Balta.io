@@ -1,0 +1,15 @@
+/home/tiago/Balta.io/Calculator/bin/Debug/net6.0/Calculator
+/home/tiago/Balta.io/Calculator/bin/Debug/net6.0/Calculator.deps.json
+/home/tiago/Balta.io/Calculator/bin/Debug/net6.0/Calculator.runtimeconfig.json
+/home/tiago/Balta.io/Calculator/bin/Debug/net6.0/Calculator.dll
+/home/tiago/Balta.io/Calculator/bin/Debug/net6.0/Calculator.pdb
+/home/tiago/Balta.io/Calculator/obj/Debug/net6.0/Calculator.csproj.AssemblyReference.cache
+/home/tiago/Balta.io/Calculator/obj/Debug/net6.0/Calculator.GeneratedMSBuildEditorConfig.editorconfig
+/home/tiago/Balta.io/Calculator/obj/Debug/net6.0/Calculator.AssemblyInfoInputs.cache
+/home/tiago/Balta.io/Calculator/obj/Debug/net6.0/Calculator.AssemblyInfo.cs
+/home/tiago/Balta.io/Calculator/obj/Debug/net6.0/Calculator.csproj.CoreCompileInputs.cache
+/home/tiago/Balta.io/Calculator/obj/Debug/net6.0/Calculator.dll
+/home/tiago/Balta.io/Calculator/obj/Debug/net6.0/refint/Calculator.dll
+/home/tiago/Balta.io/Calculator/obj/Debug/net6.0/Calculator.pdb
+/home/tiago/Balta.io/Calculator/obj/Debug/net6.0/Calculator.genruntimeconfig.cache
+/home/tiago/Balta.io/Calculator/obj/Debug/net6.0/ref/Calculator.dll
