@@ -6,6 +6,11 @@ public class Program
 {
   static void Main(string[] args)
   {
+
+  }
+
+  static void Soma()
+  {
     Console.Clear();
     Console.Write("Primeiro valor: ");
     double v1 = double.Parse(Console.ReadLine());
@@ -16,5 +21,6 @@ public class Program
     System.Console.WriteLine("");
 
     Console.WriteLine($"Resultado da soma é {v1 + v2}");
+    Console.ReadKey();
   }
 }
