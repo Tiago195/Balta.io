@@ -51,4 +51,18 @@ public class Program
     Console.WriteLine($"Resultado da divisão é {v1 / v2}");
     Console.ReadKey();
   }
+  static void Multiplicacao()
+  {
+    Console.Clear();
+    Console.Write("Primeiro valor: ");
+    double v1 = double.Parse(Console.ReadLine());
+
+    Console.Write("Segundo valor: ");
+    double v2 = double.Parse(Console.ReadLine());
+
+    System.Console.WriteLine("");
+
+    Console.WriteLine($"Resultado da multiplicação é {v1 * v2}");
+    Console.ReadKey();
+  }
 }
