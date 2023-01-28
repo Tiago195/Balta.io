@@ -1,3 +1,5 @@
+using OB.SharedContext;
+
 namespace OB.ContentContext;
 
 public class Module : Base
