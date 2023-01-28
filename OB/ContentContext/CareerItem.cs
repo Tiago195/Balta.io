@@ -1,3 +1,5 @@
+using OB.NotificationContext;
+
 namespace OB.ContentContext;
 
 public class CareerItem : Base
@@ -9,7 +11,7 @@ public class CareerItem : Base
 
   public CareerItem(int order, string title, string description, Course course)
   {
-    if (course == null) throw new Exception("O curso não pode ser nulo");
+    if (course == null) AddNotification(new Notification("Course", "Curso inválido"));
 
     Order = order;
     Title = title;
