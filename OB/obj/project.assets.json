@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/tiago/Balta.io/testes/testes.csproj",
-      "projectName": "testes",
-      "projectPath": "/home/tiago/Balta.io/testes/testes.csproj",
+      "projectUniqueName": "/home/tiago/Balta.io/OB/OB.csproj",
+      "projectName": "OB",
+      "projectPath": "/home/tiago/Balta.io/OB/OB.csproj",
       "packagesPath": "/home/tiago/.nuget/packages/",
-      "outputPath": "/home/tiago/Balta.io/testes/obj/",
+      "outputPath": "/home/tiago/Balta.io/OB/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/tiago/.nuget/NuGet/NuGet.Config"
