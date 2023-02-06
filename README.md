@@ -1,3 +1,3 @@
 # Balta.io
 
-## Esse repositório foi criado para guardar todos os projetos desenvolvidos durante o curso do Balta. Cada branche vai ter um projeto diferente.
+## Esse repo não é um projeto, é apenas umas anotações de coisas basicas do Dapper

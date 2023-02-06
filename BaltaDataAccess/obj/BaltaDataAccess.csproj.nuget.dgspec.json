@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/tiago/Balta.io/testes/testes.csproj": {}
+    "/home/tiago/Balta.io/BaltaDataAccess/BaltaDataAccess.csproj": {}
   },
   "projects": {
-    "/home/tiago/Balta.io/testes/testes.csproj": {
+    "/home/tiago/Balta.io/BaltaDataAccess/BaltaDataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tiago/Balta.io/testes/testes.csproj",
-        "projectName": "testes",
-        "projectPath": "/home/tiago/Balta.io/testes/testes.csproj",
+        "projectUniqueName": "/home/tiago/Balta.io/BaltaDataAccess/BaltaDataAccess.csproj",
+        "projectName": "BaltaDataAccess",
+        "projectPath": "/home/tiago/Balta.io/BaltaDataAccess/BaltaDataAccess.csproj",
         "packagesPath": "/home/tiago/.nuget/packages/",
-        "outputPath": "/home/tiago/Balta.io/testes/obj/",
+        "outputPath": "/home/tiago/Balta.io/BaltaDataAccess/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/tiago/.nuget/NuGet/NuGet.Config"
@@ -37,6 +37,16 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
