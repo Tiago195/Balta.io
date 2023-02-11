@@ -1,3 +1,3 @@
 # Balta.io
 
-## Esse repositório foi criado para guardar todos os projetos desenvolvidos durante o curso do Balta. Cada branche vai ter um projeto diferente.
+## Neste projeto vi muito mais a fundo o acesso a dados utilizando Dapper e EF, tbm vi um pouco de Repository.
