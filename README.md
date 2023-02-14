@@ -1,3 +1,3 @@
 # Balta.io
 
-## Esse repositório foi criado para guardar todos os projetos desenvolvidos durante o curso do Balta. Cada branche vai ter um projeto diferente.
+## Neste projeto estou vendo começo de ASPNET, aqui temos uma api simples, um todo.
