@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Blog.Data.Mappings
+namespace BlogApi.Data.Mappings
 {
   public class CategoryMap : IEntityTypeConfiguration<Category>
   {

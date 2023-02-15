@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using BlogApi.Models;
-using Blog.Data;
+using BlogApi.Data;
 using Microsoft.EntityFrameworkCore;
+using BlogApi.ViewModels;
+using BlogApi.Extensions;
 
 namespace BlogApi.Controllers;
 
@@ -12,55 +14,94 @@ public class CategoryController : ControllerBase
   [HttpGet("v1/categories")]
   public async Task<ActionResult> GetAsync([FromServices] BlogDataContext context)
   {
-    var categories = await context.Categories.ToListAsync();
-    return Ok(categories);
+    try
+    {
+      var categories = await context.Categories.ToListAsync();
+      return Ok(new ResultViewMode<List<Category>>(categories));
+    }
+    catch (Exception)
+    {
+      return StatusCode(500, new ResultViewMode<Category>("Internal server error"));
+    }
   }
 
   [HttpGet("v1/categories/{id:int}")]
   public async Task<ActionResult> GetByIdAsync([FromRoute] int id, [FromServices] BlogDataContext context)
   {
-    var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
+    try
+    {
+      var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
 
-    if (category is null) return NotFound();
+      if (category is null) return NotFound(new ResultViewMode<Category>("Categoria não encontrada"));
 
-    return Ok(category);
+      return Ok(new ResultViewMode<Category>(category));
+    }
+    catch (Exception)
+    {
+      return StatusCode(500, new ResultViewMode<Category>("Internal server error"));
+    }
   }
 
   [HttpPost("v1/categories")]
-  public async Task<ActionResult> PostAsync([FromBody] Category model, [FromServices] BlogDataContext context)
+  public async Task<ActionResult> PostAsync([FromBody] EditorCategoryViewModel model, [FromServices] BlogDataContext context)
   {
-    await context.Categories.AddAsync(model);
-    await context.SaveChangesAsync();
+    try
+    {
+      if (!ModelState.IsValid) return BadRequest(new ResultViewMode<Category>(ModelState.GetErrors()));
 
-    return Created($"v1/categories/{model.Id}", model);
+      var category = new Category { Name = model.Name, Slug = model.Slug };
+      await context.Categories.AddAsync(category);
+      await context.SaveChangesAsync();
+
+      return Created($"v1/categories/{category.Id}", new ResultViewMode<Category>(category));
+    }
+    catch (Exception)
+    {
+      return StatusCode(500, new ResultViewMode<Category>("Internal server error"));
+    }
   }
 
   [HttpPut("v1/categories/{id:int}")]
-  public async Task<IActionResult> PutAsync([FromRoute] int id, [FromBody] Category model, [FromServices] BlogDataContext context)
+  public async Task<IActionResult> PutAsync([FromRoute] int id, [FromBody] EditorCategoryViewModel model, [FromServices] BlogDataContext context)
   {
-    var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
+    try
+    {
+      var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
 
-    if (category is null) return NotFound();
+      if (category is null) return NotFound(new ResultViewMode<Category>("Categoria não encontrada."));
 
-    category.Name = model.Name;
-    category.Slug = model.Slug;
+      category.Name = model.Name;
+      category.Slug = model.Slug;
 
-    context.Categories.Update(category);
-    await context.SaveChangesAsync();
-    return Ok(category);
+      context.Categories.Update(category);
+      await context.SaveChangesAsync();
+
+      return Ok(new ResultViewMode<Category>(category));
+    }
+    catch (Exception)
+    {
+      return StatusCode(500, new ResultViewMode<Category>("Internal server error"));
+    }
   }
 
   [HttpDelete("v1/categories/{id:int}")]
   public async Task<ActionResult> DeleteAsync([FromRoute] int id, [FromServices] BlogDataContext context)
   {
-    var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
+    try
+    {
+      var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
 
-    if (category is null) return NotFound();
+      if (category is null) return NotFound(new ResultViewMode<Category>("Categoria não encontrada."));
 
-    context.Categories.Remove(category);
-    await context.SaveChangesAsync();
+      context.Categories.Remove(category);
+      await context.SaveChangesAsync();
 
-    return Ok(category);
+      return Ok(new ResultViewMode<Category>(category));
+    }
+    catch (Exception)
+    {
+      return StatusCode(500, new ResultViewMode<Category>("Internal server error"));
+    }
   }
 
 }
