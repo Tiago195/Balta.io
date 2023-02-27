@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "N1/8OD+P1snj+Pipo4khoInBrJEuHilYDt6bxsqnArKSYTESIomG041iKuF298W3AVgpCmyG/92iKgrCpbG47A==",
+  "dgSpecHash": "ZTIy7dLXPzr46RimGwvnq8mOvOf1BYXm9x8lILsPxhb54XaUmPGAOUaANThld5wF1nbbPnd6QPs10R68A5dguA==",
   "success": true,
   "projectFilePath": "/home/tiago/Balta.io/BlogApi/BlogApi.csproj",
   "expectedPackageFiles": [
@@ -60,6 +60,7 @@
     "/home/tiago/.nuget/packages/microsoft.win32.registry/5.0.0/microsoft.win32.registry.5.0.0.nupkg.sha512",
     "/home/tiago/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "/home/tiago/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
+    "/home/tiago/.nuget/packages/secureidentity/1.0.4/secureidentity.1.0.4.nupkg.sha512",
     "/home/tiago/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/home/tiago/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
     "/home/tiago/.nuget/packages/system.configuration.configurationmanager/5.0.0/system.configuration.configurationmanager.5.0.0.nupkg.sha512",
