@@ -1,8 +1,10 @@
+using System.Text.RegularExpressions;
 using BlogApi.Data;
 using BlogApi.Extensions;
 using BlogApi.Models;
 using BlogApi.Services;
 using BlogApi.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SecureIdentity.Password;
@@ -80,5 +82,32 @@ public class AccountController : ControllerBase
     }
   }
 
+  [Authorize]
+  [HttpPost("v1/accounts/upload-image")]
+  public async Task<ActionResult> UploadImage([FromBody] UploadImageViewModel model)
+  {
+    var fileName = $"{Guid.NewGuid()}.jpg";
+    var data = new Regex(@"^data:image\/[a-z]+;base64,").Replace(model.Base64Image, "");
+    var bytes = Convert.FromBase64String(data);
+
+    try
+    {
+      await System.IO.File.WriteAllBytesAsync($"wwwroot/images/{fileName}", bytes);
+    }
+    catch (Exception)
+    {
+      return StatusCode(500, new ResultViewMode<string>("Internal server error"));
+    }
+
+    var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == User.Identity.Name);
+
+    if (user is null) return BadRequest(new ResultViewMode<string>("Usuário não encontrado"));
+
+    user.Image = $"http://localhost:5091/images/{fileName}";
+    _context.Update(user);
+    await _context.SaveChangesAsync();
+
+    return Ok(new ResultViewMode<string>("Foto enviada com sucesso", null));
+  }
 
 }
