@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.Json.Serialization;
 using BlogApi;
 using BlogApi.Data;
 using BlogApi.Services;
@@ -9,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 ConfigureAuthentication(builder);
 
-builder.Services.AddControllers().ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true);
+ConfigureMvc(builder);
 
 ConfigureServices(builder);
 
@@ -58,4 +59,15 @@ void ConfigureServices(WebApplicationBuilder builder)
 {
   builder.Services.AddDbContext<BlogDataContext>();
   builder.Services.AddTransient<TokenService>();
+}
+
+void ConfigureMvc(WebApplicationBuilder builder)
+{
+  builder.Services.AddControllers()
+  .ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true)
+  .AddJsonOptions(x =>
+  {
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault; // remove valores nulos 
+  });
 }
