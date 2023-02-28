@@ -4,6 +4,7 @@ using BlogApi.Data;
 using Microsoft.EntityFrameworkCore;
 using BlogApi.ViewModels;
 using BlogApi.Extensions;
+using BlogApi.ViewModels.Categories;
 
 namespace BlogApi.Controllers;
 

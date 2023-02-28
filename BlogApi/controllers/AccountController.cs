@@ -4,6 +4,7 @@ using BlogApi.Extensions;
 using BlogApi.Models;
 using BlogApi.Services;
 using BlogApi.ViewModels;
+using BlogApi.ViewModels.Accounts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
